@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "WWAWaterIntake.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,6 +17,14 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+
+//project Variables:
+@property (nonatomic) NSUInteger weight;
+@property (nonatomic) NSUInteger numberOfOunces;
+@property (nonatomic) NSUInteger numberOfCups;
+
+-(NSUInteger)calculateWaterIntake:(NSUInteger)currentWeight;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
